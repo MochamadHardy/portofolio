@@ -24,7 +24,7 @@ Portfolio profesional modern dengan arsitektur Dark Glassmorphism, performa ting
 ### 2. Tangkapan Layar Proyek (Project Screenshots)
 Simpan file screenshot proyek Anda di folder `assets/images/` dengan penamaan berikut:
 - **Proyek 1 (Client Project Live)**: `assets/images/garuda-tac.png` (Garuda Tactical - GARTAC E-Commerce) — *Sudah aktif dan terpasang!*
-- **Proyek 2**: `assets/images/project-2.jpg` (Realtime Data Analytics & Microservice API)
+- **Proyek 2 (Personal Project)**: `assets/images/pos-inventory.png` (Multi-Branch Inventory & POS System) — *Sudah aktif dan terpasang!*
 - **Proyek 3**: `assets/images/project-3.jpg` (Collaborative Kanban & Task Management)
 - **Proyek 4**: `assets/images/project-4.jpg` (Dynamic Web Portal & Notification Engine)
 

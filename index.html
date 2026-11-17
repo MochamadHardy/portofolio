@@ -54,7 +54,7 @@
         <!-- Brand Logo -->
         <a href="#hero" class="brand-logo" aria-label="Mochamad Hardy Home">
           <span class="code-bracket">&lt;</span>
-          <span>Hardy.dev</span>
+          <span>DyS.Dev</span>
           <span class="code-bracket">/&gt;</span>
           <span class="brand-dot"></span>
         </a>
@@ -591,8 +591,8 @@
               </div>
             </article>
 
-            <!-- PROJECT 2: Flask + PostgreSQL Analytics Service -->
-            <article class="project-card animate-on-scroll" data-category="fullstack flask">
+            <!-- PROJECT 2: Multi-Branch Inventory & POS System -->
+            <article class="project-card animate-on-scroll" data-category="fullstack laravel vue">
               <!-- Framed Mockup Window Header -->
               <div class="mockup-frame">
                 <div class="mockup-header">
@@ -601,58 +601,69 @@
                     <span class="mockup-dot dot-yellow"></span>
                     <span class="mockup-dot dot-green"></span>
                   </div>
-                  <div class="mockup-url-bar">https://api.mochamadhardy.dev/v1/analytics</div>
-                  <div class="mockup-actions-hint"><i class="fa-solid fa-bolt"></i> Fast API</div>
+                  <div class="mockup-url-bar">http://localhost:5173/inventory</div>
+                  <div class="mockup-actions-hint"><i class="fa-solid fa-code-branch"></i> In Development</div>
                 </div>
 
                 <!-- 
-                  BINGKAI GAMBAR PROJEK 2:
-                  Simpan gambar di 'assets/images/project-2.jpg'
+                  BINGKAI GAMBAR PROJEK 2 (MULTI-BRANCH INVENTORY & POS):
+                  Menggunakan screenshot asli dari assets/images/pos-inventory.png
                 -->
                 <div class="mockup-body">
                   <img
-                    src="assets/images/project-2.jpg"
-                    alt="Data Analytics & Microservice API Preview"
+                    src="assets/images/pos-inventory.png"
+                    alt="Multi-Branch Inventory & POS System Preview"
                     class="mockup-img"
                   />
                   <div class="mockup-placeholder">
-                    <i class="fa-solid fa-chart-line placeholder-icon"></i>
-                    <span class="placeholder-title">Data Analytics &amp; Microservice API</span>
-                    <span class="placeholder-hint">🖼️ Simpan Screenshot: assets/images/project-2.jpg</span>
+                    <i class="fa-solid fa-boxes-stacked placeholder-icon"></i>
+                    <span class="placeholder-title">Multi-Branch Inventory &amp; POS</span>
+                    <span class="placeholder-hint">🖼️ assets/images/pos-inventory.png</span>
                   </div>
                 </div>
               </div>
 
               <!-- Project Details -->
               <div class="project-details">
-                <span class="project-category-tag">Backend &amp; Microservice</span>
-                <h3 class="project-title">Realtime Data Analytics &amp; Microservice API</h3>
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px;">
+                  <span class="project-category-tag" style="margin-bottom: 0;">Enterprise Inventory &amp; POS</span>
+                  <span class="tech-level-badge framework" style="font-size: 0.7rem; padding: 2px 8px;">
+                    <i class="fa-solid fa-laptop-code"></i> Personal Project
+                  </span>
+                </div>
+
+                <h3 class="project-title">Multi-Branch Inventory &amp; POS (Point of Sale) (OnGoing)</h3>
                 <p class="project-description">
-                  Layanan RESTful API berkinerja tinggi berbasis Flask untuk agregasi data log, perhitungan metrik bisnis otomatis, dan ekspor laporan terstruktur dengan koneksi PostgreSQL teroptimasi.
+                  Sistem monitoring pergudangan multi-cabang terpadu. Dilengkapi pelacakan stok fisik vs stok terkunci (*in-transit*), sistem mutasi &amp; surat jalan antar-gudang, peringatan batas aman stok (*safety stock alert*), filter pencarian dinamis (SKU &amp; Barcode), serta pemodelan produk bervarian.
                 </p>
 
                 <div class="project-tech-stack">
-                  <span class="stack-pill">Python Flask</span>
-                  <span class="stack-pill">PostgreSQL</span>
-                  <span class="stack-pill">JWT Auth</span>
+                  <span class="stack-pill">Laravel</span>
+                  <span class="stack-pill">Vue.js 3 (Vite)</span>
+                  <span class="stack-pill">MySQL</span>
                   <span class="stack-pill">RESTful API</span>
-                  <span class="stack-pill">Docker Ready</span>
+                  <span class="stack-pill">Multi-Branch</span>
+                  <span class="stack-pill">SPA</span>
                 </div>
 
                 <div class="project-actions">
                   <a href="#contact" class="project-link primary-link">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo / Detail
+                    <i class="fa-solid fa-circle-info"></i> Detail Proyek
                   </a>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <a href="https://github.com/DySkiaa/inventoryManagement" target="_blank" rel="noopener noreferrer" class="project-link">
                     <i class="fa-brands fa-github"></i> Repository
                   </a>
                 </div>
               </div>
             </article>
 
-            <!-- PROJECT 3: Vue.js SPA + Laravel API Task Platform -->
+            <!-- 
+              ===================================================================
+              PROJECT 3 & 4 (DI-KOMEN DULU, AKTIFKAN SAAT SUDAH SIAP):
+              ===================================================================
+            -->
+            <!--
             <article class="project-card animate-on-scroll" data-category="fullstack laravel vue">
-              <!-- Framed Mockup Window Header -->
               <div class="mockup-frame">
                 <div class="mockup-header">
                   <div class="mockup-dots">
@@ -664,10 +675,6 @@
                   <div class="mockup-actions-hint"><i class="fa-solid fa-sliders"></i> SPA</div>
                 </div>
 
-                <!-- 
-                  BINGKAI GAMBAR PROJEK 3:
-                  Simpan gambar di 'assets/images/project-3.jpg'
-                -->
                 <div class="mockup-body">
                   <img
                     src="assets/images/project-3.jpg"
@@ -682,7 +689,6 @@
                 </div>
               </div>
 
-              <!-- Project Details -->
               <div class="project-details">
                 <span class="project-category-tag">Single Page Application (SPA)</span>
                 <h3 class="project-title">Collaborative Kanban &amp; Task Management</h3>
@@ -709,9 +715,7 @@
               </div>
             </article>
 
-            <!-- PROJECT 4: Flask + Vue Content & Notification Platform -->
             <article class="project-card animate-on-scroll" data-category="fullstack flask vue">
-              <!-- Framed Mockup Window Header -->
               <div class="mockup-frame">
                 <div class="mockup-header">
                   <div class="mockup-dots">
@@ -723,10 +727,6 @@
                   <div class="mockup-actions-hint"><i class="fa-solid fa-code"></i> Full API</div>
                 </div>
 
-                <!-- 
-                  BINGKAI GAMBAR PROJEK 4:
-                  Simpan gambar di 'assets/images/project-4.jpg'
-                -->
                 <div class="mockup-body">
                   <img
                     src="assets/images/project-4.jpg"
@@ -741,7 +741,6 @@
                 </div>
               </div>
 
-              <!-- Project Details -->
               <div class="project-details">
                 <span class="project-category-tag">Fullstack API Integration</span>
                 <h3 class="project-title">Dynamic Web Portal &amp; Notification Engine</h3>
@@ -767,6 +766,7 @@
                 </div>
               </div>
             </article>
+            -->
           </div>
         </div>
       </section>
@@ -960,7 +960,7 @@
       <div class="container footer-content">
         <div class="brand-logo" style="font-size: 1.1rem;">
           <span class="code-bracket">&lt;</span>
-          <span>Hardy.dev</span>
+          <span>DyS.Dev</span>
           <span class="code-bracket">/&gt;</span>
         </div>
 
