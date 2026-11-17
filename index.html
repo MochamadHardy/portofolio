@@ -1,107 +1,990 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portofolio</title>
-    <link rel="stylesheet" href="assets/style.css" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Mochamad Hardy | Fullstack Developer</title>
+    <meta name="title" content="Mochamad Hardy | Fullstack Developer" />
+    <meta
+      name="description"
+      content="Portfolio resmi Mochamad Hardy - Fullstack Developer berpengalaman dalam pengembangan sistem scalable, backend RESTful API (Laravel & Flask), dan frontend modern reaktif (Vue.js)."
+    />
+    <meta name="author" content="Mochamad Hardy" />
+    <meta name="keywords" content="Mochamad Hardy, Fullstack Developer, Web Developer, Laravel, Flask, Vue.js, Python, PHP, PostgreSQL, MySQL, REST API, Indonesia" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome 6 Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TE4WCCKDZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-3TE4WCCKDZ");
+    </script>
   </head>
   <body>
-    <!-- NAVBAR -->
-    <nav>
-      <div class="menu-toggle">☰</div>
+    <!-- =========================================================================
+         NAVBAR
+         ========================================================================= -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <!-- Brand Logo -->
+        <a href="#hero" class="brand-logo" aria-label="Mochamad Hardy Home">
+          <span class="code-bracket">&lt;</span>
+          <span>Hardy.dev</span>
+          <span class="code-bracket">/&gt;</span>
+          <span class="brand-dot"></span>
+        </a>
 
-      <div class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <!-- Desktop Navigation Menu -->
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Action / CTA Button -->
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-paper-plane"></i> Hire Me
+          </a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
       </div>
-    </nav>
+    </header>
 
-    <section id="hero">
-      <div class="hero-bg"></div>
-      <div class="overlay"></div>
+    <main>
+      <!-- =========================================================================
+           HERO SECTION
+           ========================================================================= -->
+      <section id="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="container hero-layout">
+          <!-- Hero Left Content -->
+          <div class="hero-text animate-on-scroll">
+            <div class="status-pill">
+              <span class="pulse-dot"></span>
+              <span>Available for Full-time &amp; Freelance Projects</span>
+            </div>
 
-      <div class="hero-content">
-        <div class="hero-left">
-          <div class="profile">
-            <img src="assets/images/dys.jpeg" alt="Mochamad Hardy" />
+            <h1>
+              Hi, I'm <span class="gradient-text">Mochamad Hardy</span>
+            </h1>
+
+            <div class="hero-subtitle">
+              <span>Fullstack Developer</span>
+              <span class="stack-tag">HTML &amp; CSS</span>
+              <span class="stack-tag">Bootstrap</span>
+              <span class="stack-tag">Git</span>
+              <span class="stack-tag">Laravel</span>
+              <span class="stack-tag">Flask</span>
+              <span class="stack-tag">Vue.js</span>
+            </div>
+
+            <p class="hero-desc">
+              Membangun aplikasi web end-to-end yang tangguh, aman, dan scalable. Berlandaskan fondasi web yang solid (HTML5, CSS3, Bootstrap, Git, JavaScript) serta keahlian arsitektur backend andal (Laravel &amp; Flask) dan antarmuka reaktif modern (Vue.js).
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fa-solid fa-laptop-code"></i> Lihat Portfolio
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                <i class="fa-solid fa-comments"></i> Hubungi Saya
+              </a>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number gradient-text">Fullstack</span>
+                <span class="stat-label">Web Solutions</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">API &amp; DB</span>
+                <span class="stat-label">Scalable Architecture</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number gradient-text">Clean Code</span>
+                <span class="stat-label">Best Practices</span>
+              </div>
+            </div>
           </div>
-          <h1>Hi, I'm Mochamad Hardy</h1>
-          <p>Fullstack Developer</p>
+
+          <!-- Hero Right: Avatar Frame with Floating Badges -->
+          <div class="hero-visual animate-on-scroll">
+            <!-- 
+              ==============================================================
+              BINGKAI FOTO PROFIL (AVATAR FRAME)
+              Untuk mengganti foto wajah:
+              - Anda bisa langsung menimpa file 'assets/images/dys.jpeg'
+              - Atau mengganti atribut src di bawah ini ke file foto baru Anda.
+              ============================================================== 
+            -->
+            <div class="avatar-frame-wrapper">
+              <div class="avatar-frame-inner">
+                <img
+                  src="assets/images/dys.jpeg"
+                  alt="Mochamad Hardy - Fullstack Developer"
+                  class="profile-avatar-img"
+                  onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Mochamad+Hardy&background=0ea5e9&color=fff&size=400';"
+                />
+                <div class="avatar-overlay-gradient"></div>
+              </div>
+
+              <!-- Floating Tech Badges -->
+              <div class="floating-badge badge-vue" title="Frontend: Vue.js 3">
+                <div class="badge-icon">
+                  <i class="fa-brands fa-vuejs"></i>
+                </div>
+                <div class="badge-info">
+                  <span class="badge-title">Vue.js</span>
+                  <span class="badge-sub">Reactive UI</span>
+                </div>
+              </div>
+
+              <div class="floating-badge badge-laravel" title="Backend: Laravel">
+                <div class="badge-icon">
+                  <i class="fa-brands fa-laravel"></i>
+                </div>
+                <div class="badge-info">
+                  <span class="badge-title">Laravel</span>
+                  <span class="badge-sub">RESTful API</span>
+                </div>
+              </div>
+
+              <div class="floating-badge badge-flask" title="Backend: Python Flask">
+                <div class="badge-icon">
+                  <i class="fa-brands fa-python"></i>
+                </div>
+                <div class="badge-info">
+                  <span class="badge-title">Flask</span>
+                  <span class="badge-sub">Microservices</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           ABOUT SECTION
+           ========================================================================= -->
+      <section id="about">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-tag"><i class="fa-solid fa-user"></i> About Me</span>
+            <h2 class="section-title">Dedikasi dalam Menciptakan Solusi Digital Terbaik</h2>
+            <p class="section-subtitle">
+              Menggabungkan logika backend yang kokoh dengan pengalaman pengguna (UX) yang mulus di sisi client.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <!-- Left Narrative -->
+            <div class="about-narrative animate-on-scroll">
+              <p class="about-lead">
+                Halo! Saya seorang <span class="gradient-text">Fullstack Developer</span> yang berfokus pada arsitektur sistem scalable, otomasi data, dan aplikasi dunia nyata (real-world applications).
+              </p>
+              <p class="about-text">
+                Dalam setiap proyek, saya mengawali rancangan dari fondasi yang kokoh: markup semantik <strong>HTML5</strong>, styling terstruktur dengan <strong>CSS3</strong> &amp; <strong>Bootstrap</strong>, serta version control disiplin dengan <strong>Git &amp; GitHub</strong>.
+              </p>
+              <p class="about-text">
+                Di sisi backend, saya menguasai ekosistem <strong>PHP (Laravel)</strong> dan <strong>Python (Flask)</strong> untuk merancang RESTful API modular serta pengelolaan database relasional seperti <strong>PostgreSQL</strong> dan <strong>MySQL</strong>. Di sisi frontend, saya menghadirkan antarmuka dinamis dan reaktif menggunakan <strong>Vue.js</strong> serta modern JavaScript (ES6+), memastikan performa cepat dan pengalaman pengguna yang optimal.
+              </p>
+
+              <!-- Highlights -->
+              <div class="about-highlights">
+                <div class="highlight-box">
+                  <i class="fa-solid fa-cubes"></i>
+                  <h4>Fullstack Mindset</h4>
+                  <p>Memahami alur data dari database, controller, API, hingga ke visual interface.</p>
+                </div>
+                <div class="highlight-box">
+                  <i class="fa-solid fa-shield-halved"></i>
+                  <h4>Security &amp; Clean Code</h4>
+                  <p>Menerapkan validasi data, proteksi endpoint, dan prinsip DRY &amp; SOLID.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Core Pillars -->
+            <div class="pillars-list animate-on-scroll">
+              <div class="pillar-card">
+                <div class="pillar-icon">
+                  <i class="fa-solid fa-server"></i>
+                </div>
+                <div class="pillar-content">
+                  <h3>Backend Architecture &amp; RESTful APIs</h3>
+                  <p>Membangun endpoint API yang efisien, aman, dan berstandar industri dengan Laravel &amp; Flask, lengkap dengan autentikasi JWT / session management.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-icon">
+                  <i class="fa-brands fa-vuejs"></i>
+                </div>
+                <div class="pillar-content">
+                  <h3>Interactive Frontend &amp; SPA</h3>
+                  <p>Pengembangan Single Page Application yang interaktif dengan komponen reaktif Vue.js, state management teratur, dan tampilan responsif mobile-friendly.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-icon">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <div class="pillar-content">
+                  <h3>Database Design &amp; Optimization</h3>
+                  <p>Perancangan skema relasional, relasi entitas terstruktur, query indexing, dan optimasi performa pada PostgreSQL dan MySQL.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-icon">
+                  <i class="fa-solid fa-code-branch"></i>
+                </div>
+                <div class="pillar-content">
+                  <h3>Version Control &amp; Team Collaboration</h3>
+                  <p>Manajemen repositori kode yang rapi dengan Git &amp; GitHub, siap berkolaborasi dalam tim agile dan integrasi CI/CD.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           SKILLS SECTION
+           ========================================================================= -->
+      <section id="skills">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-tag"><i class="fa-solid fa-code"></i> Keahlian &amp; Teknologi</span>
+            <h2 class="section-title">Keahlian Lengkap: Fondasi Web hingga Framework Modern</h2>
+            <p class="section-subtitle">
+              Menguasai fondasi dasar web (HTML, CSS, Bootstrap, Git, JavaScript) hingga framework fullstack tingkat lanjut (Laravel, Flask, Vue.js, DB Relasional).
+            </p>
+          </div>
+
+          <!-- Skill Filter Tabs -->
+          <div class="skill-filter-tabs animate-on-scroll">
+            <button class="skill-filter-btn active" data-skill-filter="all">Semua Teknologi</button>
+            <button class="skill-filter-btn" data-skill-filter="base">Fondasi / Base</button>
+            <button class="skill-filter-btn" data-skill-filter="frontend">Frontend Stack</button>
+            <button class="skill-filter-btn" data-skill-filter="backend">Backend &amp; Framework</button>
+            <button class="skill-filter-btn" data-skill-filter="database">Database &amp; Tools</button>
+          </div>
+
+          <!-- Skills Grid -->
+          <div class="skills-grid">
+            <!-- 1. HTML5 (Base) -->
+            <div class="tech-card animate-on-scroll" data-skill-category="base frontend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(227, 79, 38, 0.12); color: #e34f26;">
+                  <i class="fa-brands fa-html5"></i>
+                </div>
+                <span class="tech-level-badge base">Fondasi / Base</span>
+              </div>
+              <h4 class="tech-name">HTML5</h4>
+              <p class="tech-desc">Struktur semantik dokumen web, aksesibilitas (a11y), forms &amp; standar SEO.</p>
+            </div>
+
+            <!-- 2. CSS3 (Base) -->
+            <div class="tech-card animate-on-scroll" data-skill-category="base frontend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(21, 114, 182, 0.12); color: #1572b6;">
+                  <i class="fa-brands fa-css3-alt"></i>
+                </div>
+                <span class="tech-level-badge base">Fondasi / Base</span>
+              </div>
+              <h4 class="tech-name">CSS3</h4>
+              <p class="tech-desc">Flexbox, CSS Grid, media queries responsif, animasi transisi &amp; styling modern.</p>
+            </div>
+
+            <!-- 3. Bootstrap (Base UI) -->
+            <div class="tech-card animate-on-scroll" data-skill-category="base frontend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(121, 82, 179, 0.12); color: #7952b3;">
+                  <i class="fa-brands fa-bootstrap"></i>
+                </div>
+                <span class="tech-level-badge base">Fondasi / Base</span>
+              </div>
+              <h4 class="tech-name">Bootstrap</h4>
+              <p class="tech-desc">Grid system responsif, komponen antarmuka siap pakai &amp; prototipe UI cepat.</p>
+            </div>
+
+            <!-- 4. JavaScript (Base) -->
+            <div class="tech-card animate-on-scroll" data-skill-category="base frontend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(247, 223, 30, 0.12); color: #f7df1e;">
+                  <i class="fa-brands fa-js"></i>
+                </div>
+                <span class="tech-level-badge base">Fondasi / Base</span>
+              </div>
+              <h4 class="tech-name">JavaScript (ES6+)</h4>
+              <p class="tech-desc">DOM manipulation, asynchronous AJAX/Fetch, modular ES6, array methods &amp; logika client.</p>
+            </div>
+
+            <!-- 5. Git (Base VCS) -->
+            <div class="tech-card animate-on-scroll" data-skill-category="base database tools">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(240, 80, 50, 0.12); color: #f05032;">
+                  <i class="fa-brands fa-git-alt"></i>
+                </div>
+                <span class="tech-level-badge base">Fondasi / Base</span>
+              </div>
+              <h4 class="tech-name">Git</h4>
+              <p class="tech-desc">Version control system, commit disiplin, branching strategy, merging &amp; conflict resolution.</p>
+            </div>
+
+            <!-- 6. GitHub -->
+            <div class="tech-card animate-on-scroll" data-skill-category="database tools">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(255, 255, 255, 0.1); color: #f8fafc;">
+                  <i class="fa-brands fa-github"></i>
+                </div>
+                <span class="tech-level-badge tools">Dev Tools</span>
+              </div>
+              <h4 class="tech-name">GitHub</h4>
+              <p class="tech-desc">Manajemen repositori jarak jauh, pull request, kolaborasi tim &amp; dokumentasi proyek.</p>
+            </div>
+
+            <!-- 7. PHP (Base Backend) -->
+            <div class="tech-card animate-on-scroll" data-skill-category="base backend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(119, 123, 180, 0.12); color: #8892bf;">
+                  <i class="fa-brands fa-php"></i>
+                </div>
+                <span class="tech-level-badge base">Fondasi / Base</span>
+              </div>
+              <h4 class="tech-name">PHP</h4>
+              <p class="tech-desc">Pemrograman backend server-side, Object-Oriented Programming (OOP) &amp; arsitektur MVC.</p>
+            </div>
+
+            <!-- 8. Laravel (Framework Utama) -->
+            <div class="tech-card animate-on-scroll" data-skill-category="backend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(255, 45, 32, 0.12); color: #ff2d20;">
+                  <i class="fa-brands fa-laravel"></i>
+                </div>
+                <span class="tech-level-badge framework">Framework Utama</span>
+              </div>
+              <h4 class="tech-name">Laravel</h4>
+              <p class="tech-desc">RESTful API modular, Eloquent ORM, migrasi database, middleware &amp; autentikasi Sanctum.</p>
+            </div>
+
+            <!-- 9. Python (Base Backend) -->
+            <div class="tech-card animate-on-scroll" data-skill-category="base backend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(55, 118, 171, 0.12); color: #3776ab;">
+                  <i class="fa-brands fa-python"></i>
+                </div>
+                <span class="tech-level-badge base">Fondasi / Base</span>
+              </div>
+              <h4 class="tech-name">Python</h4>
+              <p class="tech-desc">Sintaks terstruktur, automasi skrip, pemrosesan data relasional &amp; backend business logic.</p>
+            </div>
+
+            <!-- 10. Flask (Framework Utama) -->
+            <div class="tech-card animate-on-scroll" data-skill-category="backend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(56, 189, 248, 0.12); color: #38bdf8;">
+                  <i class="fa-solid fa-pepper-hot"></i>
+                </div>
+                <span class="tech-level-badge framework">Framework Utama</span>
+              </div>
+              <h4 class="tech-name">Flask</h4>
+              <p class="tech-desc">Microframework Python ringan, cepat, dan modular untuk microservices &amp; RESTful API.</p>
+            </div>
+
+            <!-- 11. Vue.js (Framework Utama) -->
+            <div class="tech-card animate-on-scroll" data-skill-category="frontend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(65, 184, 131, 0.12); color: #42b883;">
+                  <i class="fa-brands fa-vuejs"></i>
+                </div>
+                <span class="tech-level-badge framework">Framework Utama</span>
+              </div>
+              <h4 class="tech-name">Vue.js (v2 &amp; v3)</h4>
+              <p class="tech-desc">Single Page Application (SPA), reaktivitas komponen, state management &amp; client-side routing.</p>
+            </div>
+
+            <!-- 12. Tailwind CSS -->
+            <div class="tech-card animate-on-scroll" data-skill-category="frontend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(56, 189, 248, 0.12); color: #38bdf8;">
+                  <i class="fa-solid fa-wind"></i>
+                </div>
+                <span class="tech-level-badge framework">Styling Modern</span>
+              </div>
+              <h4 class="tech-name">Tailwind CSS</h4>
+              <p class="tech-desc">Utility-first CSS framework untuk perancangan antarmuka kustom yang cepat dan efisien.</p>
+            </div>
+
+            <!-- 13. MySQL -->
+            <div class="tech-card animate-on-scroll" data-skill-category="database">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(0, 117, 143, 0.12); color: #00758f;">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <span class="tech-level-badge database">Database RDBMS</span>
+              </div>
+              <h4 class="tech-name">MySQL</h4>
+              <p class="tech-desc">Perancangan skema relasional, normalisasi tabel, query indexing &amp; integritas data transaksi.</p>
+            </div>
+
+            <!-- 14. PostgreSQL -->
+            <div class="tech-card animate-on-scroll" data-skill-category="database">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(51, 103, 145, 0.12); color: #38bdf8;">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <span class="tech-level-badge database">Database RDBMS</span>
+              </div>
+              <h4 class="tech-name">PostgreSQL</h4>
+              <p class="tech-desc">Sistem basis data objek-relasional tingkat lanjut dengan performa tinggi &amp; fitur SQL kompleks.</p>
+            </div>
+
+            <!-- 15. RESTful APIs -->
+            <div class="tech-card animate-on-scroll" data-skill-category="backend">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(14, 165, 233, 0.12); color: #0ea5e9;">
+                  <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <span class="tech-level-badge framework">Arsitektur Web</span>
+              </div>
+              <h4 class="tech-name">RESTful APIs</h4>
+              <p class="tech-desc">Standar HTTP endpoints JSON terstruktur, status code konsisten, token auth &amp; arsitektur stateless.</p>
+            </div>
+
+            <!-- 16. Postman -->
+            <div class="tech-card animate-on-scroll" data-skill-category="database tools">
+              <div class="tech-card-header">
+                <div class="tech-icon-wrap" style="background: rgba(255, 108, 55, 0.12); color: #ff6c37;">
+                  <i class="fa-solid fa-vial"></i>
+                </div>
+                <span class="tech-level-badge tools">Dev Tools</span>
+              </div>
+              <h4 class="tech-name">Postman</h4>
+              <p class="tech-desc">Pengujian endpoint RESTful API, verifikasi response payload &amp; dokumentasi request testing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           PROJECTS SHOWCASE SECTION (FRAMED MOCKUP SYSTEM)
+           ========================================================================= -->
+      <section id="projects">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Featured Projects</span>
+            <h2 class="section-title">Hasil Karya &amp; Proyek Unggulan</h2>
+            <p class="section-subtitle">
+              Portofolio proyek nyata yang mengimplementasikan Laravel, Flask, Vue.js, dan database relasional.
+            </p>
+          </div>
+
+          <!-- Project Filter Tabs -->
+          <div class="project-filter-tabs animate-on-scroll">
+            <button class="filter-btn active" data-filter="all">Semua Proyek</button>
+            <button class="filter-btn" data-filter="client">Proyek Klien (Live)</button>
+            <button class="filter-btn" data-filter="flask">Flask &amp; Python</button>
+            <button class="filter-btn" data-filter="laravel">Laravel &amp; Vue</button>
+            <button class="filter-btn" data-filter="fullstack">Fullstack System</button>
+          </div>
+
+          <!-- Projects Grid Showcase -->
+          <div class="projects-grid">
+            <!-- PROJECT 1: Garuda Tactical (Client Project Live) -->
+            <article class="project-card animate-on-scroll" data-category="client flask fullstack">
+              <!-- Framed Mockup Window Header -->
+              <div class="mockup-frame">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="mockup-dot dot-red"></span>
+                    <span class="mockup-dot dot-yellow"></span>
+                    <span class="mockup-dot dot-green"></span>
+                  </div>
+                  <div class="mockup-url-bar">https://gartac.co.id</div>
+                  <div class="mockup-actions-hint"><i class="fa-solid fa-lock"></i> Live Client</div>
+                </div>
+
+                <!-- 
+                  BINGKAI GAMBAR PROJEK 1 (GARUDA TACTICAL):
+                  Menggunakan screenshot asli dari assets/images/garuda-tac.png
+                -->
+                <div class="mockup-body">
+                  <img
+                    src="assets/images/garuda-tac.png"
+                    alt="Garuda Tactical (GARTAC) E-Commerce Platform"
+                    class="mockup-img"
+                  />
+                  <div class="mockup-placeholder">
+                    <i class="fa-solid fa-shield-halved placeholder-icon"></i>
+                    <span class="placeholder-title">Garuda Tactical (GARTAC)</span>
+                    <span class="placeholder-hint">🖼️ assets/images/garuda-tac.png</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Details -->
+              <div class="project-details">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px;">
+                  <span class="project-category-tag" style="margin-bottom: 0;">E-Commerce Platform</span>
+                  <span class="tech-level-badge base" style="font-size: 0.7rem; padding: 2px 8px;">
+                    <i class="fa-solid fa-briefcase"></i> Client Project
+                  </span>
+                </div>
+
+                <h3 class="project-title">Garuda Tactical (GARTAC) - Production E-Commerce</h3>
+                <p class="project-description">
+                  Platform e-commerce apparel taktis komersial skala penuh. Dilengkapi payment gateway <strong>Midtrans</strong> (Virtual Account, QRIS, otomatisasi status), integrasi ongkir real-time <strong>RajaOngkir API</strong>, sistem reward <strong>Customer Loyalty Points &amp; Tier Membership</strong>, manajemen voucher diskon, dan katalog varian produk dinamis.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="stack-pill">Python Flask</span>
+                  <span class="stack-pill">MySQL</span>
+                  <span class="stack-pill">Midtrans API</span>
+                  <span class="stack-pill">RajaOngkir API</span>
+                  <span class="stack-pill">Points &amp; Tier</span>
+                  <span class="stack-pill">Bootstrap</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://gartac.co.id" target="_blank" rel="noopener noreferrer" class="project-link primary-link">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Kunjungi Website (Live)
+                  </a>
+                  <span class="project-link" style="cursor: default;" title="Source code privat milik klien">
+                    <i class="fa-solid fa-lock"></i> Client Confidential
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 2: Flask + PostgreSQL Analytics Service -->
+            <article class="project-card animate-on-scroll" data-category="fullstack flask">
+              <!-- Framed Mockup Window Header -->
+              <div class="mockup-frame">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="mockup-dot dot-red"></span>
+                    <span class="mockup-dot dot-yellow"></span>
+                    <span class="mockup-dot dot-green"></span>
+                  </div>
+                  <div class="mockup-url-bar">https://api.mochamadhardy.dev/v1/analytics</div>
+                  <div class="mockup-actions-hint"><i class="fa-solid fa-bolt"></i> Fast API</div>
+                </div>
+
+                <!-- 
+                  BINGKAI GAMBAR PROJEK 2:
+                  Simpan gambar di 'assets/images/project-2.jpg'
+                -->
+                <div class="mockup-body">
+                  <img
+                    src="assets/images/project-2.jpg"
+                    alt="Data Analytics & Microservice API Preview"
+                    class="mockup-img"
+                  />
+                  <div class="mockup-placeholder">
+                    <i class="fa-solid fa-chart-line placeholder-icon"></i>
+                    <span class="placeholder-title">Data Analytics &amp; Microservice API</span>
+                    <span class="placeholder-hint">🖼️ Simpan Screenshot: assets/images/project-2.jpg</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Details -->
+              <div class="project-details">
+                <span class="project-category-tag">Backend &amp; Microservice</span>
+                <h3 class="project-title">Realtime Data Analytics &amp; Microservice API</h3>
+                <p class="project-description">
+                  Layanan RESTful API berkinerja tinggi berbasis Flask untuk agregasi data log, perhitungan metrik bisnis otomatis, dan ekspor laporan terstruktur dengan koneksi PostgreSQL teroptimasi.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="stack-pill">Python Flask</span>
+                  <span class="stack-pill">PostgreSQL</span>
+                  <span class="stack-pill">JWT Auth</span>
+                  <span class="stack-pill">RESTful API</span>
+                  <span class="stack-pill">Docker Ready</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="#contact" class="project-link primary-link">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo / Detail
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fa-brands fa-github"></i> Repository
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 3: Vue.js SPA + Laravel API Task Platform -->
+            <article class="project-card animate-on-scroll" data-category="fullstack laravel vue">
+              <!-- Framed Mockup Window Header -->
+              <div class="mockup-frame">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="mockup-dot dot-red"></span>
+                    <span class="mockup-dot dot-yellow"></span>
+                    <span class="mockup-dot dot-green"></span>
+                  </div>
+                  <div class="mockup-url-bar">https://hardy.dev/projects/collab-task</div>
+                  <div class="mockup-actions-hint"><i class="fa-solid fa-sliders"></i> SPA</div>
+                </div>
+
+                <!-- 
+                  BINGKAI GAMBAR PROJEK 3:
+                  Simpan gambar di 'assets/images/project-3.jpg'
+                -->
+                <div class="mockup-body">
+                  <img
+                    src="assets/images/project-3.jpg"
+                    alt="Collaborative Kanban & Task Management Preview"
+                    class="mockup-img"
+                  />
+                  <div class="mockup-placeholder">
+                    <i class="fa-solid fa-list-check placeholder-icon"></i>
+                    <span class="placeholder-title">Interactive Task &amp; Project Board</span>
+                    <span class="placeholder-hint">🖼️ Simpan Screenshot: assets/images/project-3.jpg</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Details -->
+              <div class="project-details">
+                <span class="project-category-tag">Single Page Application (SPA)</span>
+                <h3 class="project-title">Collaborative Kanban &amp; Task Management</h3>
+                <p class="project-description">
+                  Aplikasi pelacak tugas tim dengan antarmuka seret-lepas (drag-and-drop), filter dinamis, manajemen deadline otomatis, serta notifikasi status berbasis Vue.js dan backend Laravel.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="stack-pill">Vue.js</span>
+                  <span class="stack-pill">Laravel</span>
+                  <span class="stack-pill">JavaScript (ES6+)</span>
+                  <span class="stack-pill">MySQL</span>
+                  <span class="stack-pill">Bootstrap 5</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="#contact" class="project-link primary-link">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo / Detail
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fa-brands fa-github"></i> Repository
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PROJECT 4: Flask + Vue Content & Notification Platform -->
+            <article class="project-card animate-on-scroll" data-category="fullstack flask vue">
+              <!-- Framed Mockup Window Header -->
+              <div class="mockup-frame">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="mockup-dot dot-red"></span>
+                    <span class="mockup-dot dot-yellow"></span>
+                    <span class="mockup-dot dot-green"></span>
+                  </div>
+                  <div class="mockup-url-bar">https://hardy.dev/projects/portal-api</div>
+                  <div class="mockup-actions-hint"><i class="fa-solid fa-code"></i> Full API</div>
+                </div>
+
+                <!-- 
+                  BINGKAI GAMBAR PROJEK 4:
+                  Simpan gambar di 'assets/images/project-4.jpg'
+                -->
+                <div class="mockup-body">
+                  <img
+                    src="assets/images/project-4.jpg"
+                    alt="Dynamic Web Portal & Notification Engine Preview"
+                    class="mockup-img"
+                  />
+                  <div class="mockup-placeholder">
+                    <i class="fa-solid fa-globe placeholder-icon"></i>
+                    <span class="placeholder-title">Web Portal &amp; Notification Engine</span>
+                    <span class="placeholder-hint">🖼️ Simpan Screenshot: assets/images/project-4.jpg</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Details -->
+              <div class="project-details">
+                <span class="project-category-tag">Fullstack API Integration</span>
+                <h3 class="project-title">Dynamic Web Portal &amp; Notification Engine</h3>
+                <p class="project-description">
+                  Sistem portal informasi cerdas dengan CMS headless berbasis Flask, integrasi pencarian cepat, relasi database PostgreSQL, dan frontend reaktif Vue.js.
+                </p>
+
+                <div class="project-tech-stack">
+                  <span class="stack-pill">Python Flask</span>
+                  <span class="stack-pill">Vue.js</span>
+                  <span class="stack-pill">PostgreSQL</span>
+                  <span class="stack-pill">RESTful API</span>
+                  <span class="stack-pill">Git</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="#contact" class="project-link primary-link">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo / Detail
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fa-brands fa-github"></i> Repository
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           SERVICES / WHAT I DO SECTION
+           ========================================================================= -->
+      <section id="services">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Services &amp; Solutions</span>
+            <h2 class="section-title">Apa yang Bisa Saya Bangun untuk Anda</h2>
+            <p class="section-subtitle">
+              Solusi pengembangan perangkat lunak terintegrasi dari tahap perencanaan arsitektur hingga implementasi produksi.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-card animate-on-scroll">
+              <div class="service-icon">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3 class="service-title">Fullstack Web App Development</h3>
+              <p class="service-desc">
+                Membangun aplikasi web kustom end-to-end yang menggabungkan backend Laravel/Flask yang stabil dengan frontend Vue.js interaktif dan responsif di semua perangkat.
+              </p>
+            </div>
+
+            <div class="service-card animate-on-scroll">
+              <div class="service-icon">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <h3 class="service-title">RESTful API &amp; Integrasi Layanan</h3>
+              <p class="service-desc">
+                Desain dan implementasi RESTful API terstandarisasi, aman dengan JWT/token authentication, mudah didokumentasikan, dan siap dikonsumsi oleh aplikasi mobile atau web modern.
+              </p>
+            </div>
+
+            <div class="service-card animate-on-scroll">
+              <div class="service-icon">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <h3 class="service-title">Database Design &amp; Optimasi Query</h3>
+              <p class="service-desc">
+                Perancangan skema database relasional (MySQL &amp; PostgreSQL), normalisasi data, migrasi struktur, dan optimasi query untuk menangani volume data bertumbuh.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================================
+           CONTACT SECTION
+           ========================================================================= -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-tag"><i class="fa-solid fa-envelope"></i> Get In Touch</span>
+            <h2 class="section-title">Mari Bangun Solusi Bersama!</h2>
+            <p class="section-subtitle">
+              Punya ide proyek, tawaran pekerjaan, atau ingin berkonsultasi mengenai arsitektur sistem? Saya siap berdiskusi dengan Anda.
+            </p>
+          </div>
+
+          <div class="contact-layout">
+            <!-- Contact Left Info Cards -->
+            <div class="contact-info animate-on-scroll">
+              <h3 class="contact-lead">Hubungi saya melalui saluran berikut:</h3>
+              <p class="contact-text">
+                Saya selalu terbuka untuk mendiskusikan peluang baru, proyek lepas (freelance), maupun posisi Fullstack / Backend Developer full-time.
+              </p>
+
+              <div class="contact-cards-list">
+                <!-- Email Card -->
+                <div class="contact-method-card">
+                  <div class="contact-method-left">
+                    <div class="contact-method-icon">
+                      <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                      <div class="contact-method-title">Kirimkan Email ke:</div>
+                      <div class="contact-method-val">hardysafaryherawan@gmail.com</div>
+                    </div>
+                  </div>
+                  <button
+                    class="copy-btn"
+                    id="copyEmailBtn"
+                    data-email="hardysafaryherawan@gmail.com"
+                    title="Salin alamat email"
+                  >
+                    <i class="fa-regular fa-copy"></i> Salin
+                  </button>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <a
+                  href="https://wa.me/6281573692697"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-method-card"
+                >
+                  <div class="contact-method-left">
+                    <div class="contact-method-icon" style="background: rgba(37, 211, 102, 0.1); color: #25d366;">
+                      <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                      <div class="contact-method-title">Direct WhatsApp:</div>
+                      <div class="contact-method-val">Chat via WhatsApp</div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square" style="color: var(--text-subtle);"></i>
+                </a>
+
+                <!-- GitHub Profile Card -->
+                <a
+                  href="https://github.com/DySkiaa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-method-card"
+                >
+                  <div class="contact-method-left">
+                    <div class="contact-method-icon">
+                      <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div>
+                      <div class="contact-method-title">Kunjungi GitHub:</div>
+                      <div class="contact-method-val">github.com/DySkiaa</div>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square" style="color: var(--text-subtle);"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Contact Right: Interactive Form Box -->
+            <div class="contact-form-box animate-on-scroll">
+              <h3 style="margin-bottom: 20px; font-size: 1.25rem; font-weight: 700;">Kirim Pesan Cepat</h3>
+              
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="formName" class="form-label">Nama Lengkap</label>
+                  <input
+                    type="text"
+                    id="formName"
+                    class="form-input"
+                    placeholder="Masukkan nama Anda..."
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="formEmail" class="form-label">Alamat Email</label>
+                  <input
+                    type="email"
+                    id="formEmail"
+                    class="form-input"
+                    placeholder="nama@email.com"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="formMessage" class="form-label">Pesan / Detail Proyek</label>
+                  <textarea
+                    id="formMessage"
+                    class="form-textarea"
+                    placeholder="Ceritakan proyek atau kebutuhan sistem Anda..."
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                  <i class="fa-solid fa-paper-plane"></i> Kirim Pesan Sekarang
+                </button>
+
+                <div id="formFeedback" class="form-feedback"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================================================
+         FOOTER
+         ========================================================================= -->
+    <footer>
+      <div class="container footer-content">
+        <div class="brand-logo" style="font-size: 1.1rem;">
+          <span class="code-bracket">&lt;</span>
+          <span>Hardy.dev</span>
+          <span class="code-bracket">/&gt;</span>
+        </div>
+
+        <p class="footer-copy">
+          &copy; 2026 Mochamad Hardy. All rights reserved. Built with Passion &amp; Clean Code.
+        </p>
+
+        <div class="footer-socials">
+          <a href="https://github.com/DySkiaa/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mochamad-hardy-a92943268/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:hardysafaryherawan@gmail.com" class="social-icon-btn" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
         </div>
       </div>
-    </section>
+    </footer>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Saya seorang backend developer yang berfokus pada pengembangan sistem
-        scalable dan real-world application, dengan pengalaman dalam membangun
-        API, manajemen database, dan integrasi berbagai layanan.
-      </p>
-    </section>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" title="Kembali ke atas" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2>Skills</h2>
-
-      <div class="skills">
-        <div class="skill">Python</div>
-        <div class="skill">Flask</div>
-        <div class="skill">PostgreSQL</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">Bootstrap</div>
-        <div class="skill">PHP</div>
-        <div class="skill">Laravel</div>
-        <div class="skill">MySQL</div>
-        <div class="skill">Git</div>
-      </div>
-    </section>
-
-    <!-- PROJECT -->
-    <section id="projects">
-      <h2>Projects</h2>
-
-      <div class="projects">
-        <div class="card">
-          <h3>Coming Soon</h3>
-          <p>Project akan segera ditambahkan</p>
-        </div>
-
-        <div class="card">
-          <h3>Coming Soon</h3>
-          <p>Project akan segera ditambahkan</p>
-        </div>
-      </div>
-    </section>
-
-    <footer>© 2026 Mochamad Hardy</footer>
+    <!-- Main JavaScript -->
     <script src="assets/main.js"></script>
   </body>
 </html>
-
-//  google analytics
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-3TE4WCCKDZ"
-></script>
-
-  // google analytics
-
-<script>
-  <!-- Google tag (gtag.js) -->
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", "G-3TE4WCCKDZ");
-</script>
