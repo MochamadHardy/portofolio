@@ -33,7 +33,7 @@ Simpan file screenshot proyek Anda di folder `assets/images/` dengan penamaan be
 ---
 
 ## 🛠️ Kustomisasi Kontak & Tautan
-Buka `index.html` dan sesuaikan informasi berikut:
-1. **Email**: Ubah `hardy@example.com` dan atribut `data-email` pada tombol salin.
-2. **WhatsApp**: Ganti nomor pada link `https://wa.me/6281234567890`.
-3. **GitHub & LinkedIn**: Sesuaikan tautan profil di bagian Proyek, Kontak, dan Footer.
+Kontak Anda saat ini sudah terhubung ke:
+1. **Email**: `hardysafaryherawan@gmail.com` (termasuk tombol salin cepat).
+2. **WhatsApp**: `https://wa.me/6281573692697` (form pesan langsung terhubung ke nomor ini).
+3. **GitHub & LinkedIn**: Terhubung ke `github.com/DySkiaa` dan profil LinkedIn Anda.

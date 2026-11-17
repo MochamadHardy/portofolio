@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. Interactive Contact Form Submission
+  // 7. Interactive Contact Form -> Direct WhatsApp Forwarding
   const contactForm = document.getElementById('contactForm');
   const formFeedback = document.getElementById('formFeedback');
 
@@ -193,30 +193,49 @@ document.addEventListener('DOMContentLoaded', () => {
       const emailInput = document.getElementById('formEmail');
       const messageInput = document.getElementById('formMessage');
 
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
 
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mengirim...';
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Menghubungkan ke WhatsApp...';
       submitBtn.disabled = true;
 
-      // Simulate sending or redirect to mailto
+      // WhatsApp Destination Number
+      const waNumber = '6281573692697';
+
+      // Format Message
+      const waText = 
+        `Halo Mochamad Hardy, saya menghubungi melalui portfolio website Anda:\n\n` +
+        `👤 *Nama:* ${name}\n` +
+        `📧 *Email:* ${email}\n\n` +
+        `💬 *Pesan / Detail Kebutuhan:*\n${message}\n\n` +
+        `Terima kasih!`;
+
+      const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waText)}`;
+
       setTimeout(() => {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
 
         formFeedback.className = 'form-feedback success';
         formFeedback.innerHTML = `
-          <strong>Terima kasih, ${nameInput ? nameInput.value : ''}!</strong> 
-          Pesan Anda telah siap. Anda juga dapat langsung menghubungi saya via WhatsApp atau Email di samping.
+          <strong><i class="fa-brands fa-whatsapp"></i> Membuka WhatsApp...</strong><br/>
+          Jika chat tidak otomatis terbuka, <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: underline; font-weight: 600;">klik di sini untuk langsung chat</a>.
         `;
+
+        // Open WhatsApp in new tab
+        window.open(waUrl, '_blank');
 
         contactForm.reset();
 
         setTimeout(() => {
           formFeedback.style.display = 'none';
           formFeedback.className = 'form-feedback';
-        }, 7000);
-      }, 800);
+        }, 10000);
+      }, 500);
     });
   }
 
