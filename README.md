@@ -1,39 +1,96 @@
 # Portfolio Mochamad Hardy - Fullstack Developer
 
-Portfolio profesional modern dengan arsitektur Dark Glassmorphism, performa tinggi, dan responsif di seluruh perangkat (Desktop, Tablet, Mobile).
-
-## 🚀 Fitur & Keunggulan
-- **Design System Modern**: Dark glassmorphism, ambient gradient glow, tipografi *Plus Jakarta Sans* & *JetBrains Mono*, serta FontAwesome 6 icons.
-- **Fullstack Focus**: Menyorot keahlian utama di bidang backend (**Laravel**, **Flask**, **PHP**, **Python**, **PostgreSQL**, **MySQL**, **RESTful API**) dan frontend (**Vue.js**, **JavaScript ES6+**, **Tailwind/Bootstrap**).
-- **Bingkai Modular Siap Pakai**:
-  - **Avatar Frame**: Bingkai foto profil dengan glowing border dan *floating tech badges* (Vue.js, Laravel, Flask).
-  - **Mockup Project Frame**: Tampilan browser modern (macOS style window dots + URL bar). Dilengkapi sistem deteksi otomatis: jika screenshot belum dimasukkan, bingkai placeholder elegan tetap tampil rapi; saat file gambar ditambahkan, otomatis tampil seketika.
-- **Filter Proyek Interaktif**: Filter dinamis (Semua, Laravel & Vue, Flask & Python, Fullstack) tanpa reload.
-- **Aksi Cepat Kontak**: Fitur salin alamat email satu klik (*Copy to Clipboard*), integrasi WhatsApp langsung, dan formulir pesan responsif.
-- **ScrollSpy & Smooth Reveal**: Navigasi pintar yang menandai menu aktif secara otomatis saat halaman digulir.
+Portfolio web personal modern, interaktif, dan berperforma tinggi dengan tema **Dark & Light Mode**, efek 3D tilt, live message preview, screenshot lightbox, dan responsif di seluruh perangkat (Desktop, Tablet, Mobile).
 
 ---
 
-## 📸 Panduan Mengisi Foto & Gambar
+## 🚀 Fitur Interaktif & Keunggulan
 
-### 1. Foto Profil Wajah
-- File foto profil diarahkan ke: `assets/images/dys.jpeg`
-- Anda cukup menimpa file `dys.jpeg` dengan foto baru Anda, atau ganti atribut `src` di `index.html` pada bagian `<div class="avatar-frame-inner">`.
-- Sudah dilengkapi dengan fallback otomatis jika gambar bermasalah.
-
-### 2. Tangkapan Layar Proyek (Project Screenshots)
-Simpan file screenshot proyek Anda di folder `assets/images/` dengan penamaan berikut:
-- **Proyek 1 (Client Project Live)**: `assets/images/garuda-tac.png` (Garuda Tactical - GARTAC E-Commerce) — *Sudah aktif dan terpasang!*
-- **Proyek 2 (Personal Project)**: `assets/images/pos-inventory.png` (Multi-Branch Inventory & POS System) — *Sudah aktif dan terpasang!*
-- **Proyek 3**: `assets/images/project-3.jpg` (Collaborative Kanban & Task Management)
-- **Proyek 4**: `assets/images/project-4.jpg` (Dynamic Web Portal & Notification Engine)
-
-*Catatan: Sistem secara otomatis menampilkan gambar segera setelah Anda menaruh file dengan nama di atas di folder `assets/images/`.*
+1. **Top Reading Progress Bar**:
+   - Indikator bar tipis bercahaya di bagian atas navigasi yang melacak kedalaman scroll secara real-time.
+2. **Hero Dynamic Typewriter Effect**:
+   - Teks berganti dinamis mengetik keahlian utama (*Fullstack Web Developer*, *Laravel & Vue.js Specialist*, *Python Flask & MySQL Architect*, dsb.) dengan kursor berkedip.
+3. **Animated Number Counter**:
+   - Angka statistik (*Tahun Pengalaman, Teknologi Modern, Komitmen Kualitas*) beranimasi menghitung naik secara otomatis saat di-scroll ke viewport.
+4. **Efek 3D Tilt & Magnetic Cursor Spotlight**:
+   - Kartu proyek, keahlian, dan bingkai foto bergerak mengikuti arah kursor mouse (perspektif 3D) dengan efek pantulan cahaya *radial spotlight* (gaya Linear / Vercel).
+5. **Interactive Project Screenshot Lightbox / Modal**:
+   - Mengklik mockup proyek akan membuka modal layar penuh beresolusi tinggi dengan informasi proyek, tombol kunjungi live, dan tombol tutup (`Esc` atau backdrop click).
+6. **Live WhatsApp Message Previewer & Character Counter**:
+   - Formulir kontak dilengkapi gelembung chat WhatsApp interaktif yang langsung menampilkan format pesan secara real-time saat pengunjung mengetik nama, email, dan pesan.
+   - Penghitung karakter dinamis (`0 / 500`) dengan peringatan batas aman.
+7. **Filter Proyek & Keahlian Dinamis**:
+   - Filter kartu proyek (Semua, Proyek Klien, Flask, Laravel, Fullstack) dan filter kategori keahlian secara instan tanpa reload halaman.
+8. **Dark & Light Mode Switcher**:
+   - Beralih tema gelap & terang dengan palet kontras tinggi yang nyaman di mata, tersimpan permanen di `localStorage`.
+9. **Google Tag Manager & Google Analytics**:
+   - Terintegrasi dengan Google Tag Manager (`GTM-TJZDMDJW`) dan Google Analytics 4 (`G-3TE4WCCKDZ`) lengkap dengan fallback `<noscript>` untuk pelacakan trafik pengunjung.
+10. **Aksi Cepat & Micro-interactions**:
+   - Efek gelombang air (*ripple effect*) pada setiap tombol saat diklik.
+   - Tombol salin email satu klik (*Copy to Clipboard*) dengan animasi tanda centang hijau "Tersalin!".
+   - Pengiriman formulir langsung membuka chat WhatsApp tujuan (`+62 815-7369-2697`).
 
 ---
 
-## 🛠️ Kustomisasi Kontak & Tautan
-Kontak Anda saat ini sudah terhubung ke:
-1. **Email**: `hardysafaryherawan@gmail.com` (termasuk tombol salin cepat).
-2. **WhatsApp**: `https://wa.me/6281573692697` (form pesan langsung terhubung ke nomor ini).
-3. **GitHub & LinkedIn**: Terhubung ke `github.com/DySkiaa` dan profil LinkedIn Anda.
+## 📁 Struktur Direktori & Aset
+
+```text
+portofolio/
+├── index.html           # Struktur halaman utama (Semantik HTML5)
+├── README.md            # Dokumentasi proyek
+└── assets/
+    ├── style.css        # Desain, CSS variables, Dark/Light mode, efek interaktif
+    ├── main.js          # Engine interaktivitas (ScrollSpy, Lightbox, WA preview, Tilt)
+    └── images/          # Aset foto & screenshot proyek
+        ├── dys.jpeg             # Foto profil avatar
+        ├── garuda-tac.png       # Screenshot E-Commerce Garuda Tactical
+        └── pos-inventory.png    # Screenshot Multi-Branch Inventory POS
+```
+
+---
+
+## 🛠️ Menjalankan Proyek Secara Lokal
+
+Cukup buka file `index.html` langsung di browser, atau jalankan server lokal:
+
+```bash
+# Menggunakan Python
+python -m http.server 8000
+
+# Menggunakan Node.js npx serve
+npx serve .
+```
+
+Buka `http://localhost:8000` pada browser Anda.
+
+
+## 📁 Struktur Direktori & Aset
+
+```text
+portofolio/
+├── index.html           # Struktur halaman utama (Semantik HTML5)
+├── README.md            # Dokumentasi proyek
+└── assets/
+    ├── style.css        # Desain, CSS variables, Dark/Light mode, efek interaktif
+    ├── main.js          # Engine interaktivitas (ScrollSpy, Lightbox, WA preview, Tilt)
+    └── images/          # Aset foto & screenshot proyek
+        ├── dys.jpeg             # Foto profil avatar
+        ├── garuda-tac.png       # Screenshot E-Commerce Garuda Tactical
+        └── pos-inventory.png    # Screenshot Multi-Branch Inventory POS
+```
+
+---
+
+## 🛠️ Menjalankan Proyek Secara Lokal
+
+Cukup buka file `index.html` langsung di browser, atau jalankan server lokal:
+
+```bash
+# Menggunakan Python
+python -m http.server 8000
+
+# Menggunakan Node.js npx serve
+npx serve .
+```
+
+Buka `http://localhost:8000` pada browser Anda.

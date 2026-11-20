@@ -34,6 +34,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/style.css" />
 
+    <!-- Google Tag Manager (gtm.js) -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TJZDMDJW"></script>
     <!-- Google Analytics (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TE4WCCKDZ"></script>
     <script>
@@ -46,15 +48,28 @@
     </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TJZDMDJW"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- =========================================================================
          NAVBAR
          ========================================================================= -->
     <header class="navbar" id="navbar">
+      <!-- Reading Progress Bar -->
+      <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
       <div class="nav-container">
         <!-- Brand Logo -->
         <a href="#hero" class="brand-logo" aria-label="Mochamad Hardy Home">
           <span class="code-bracket">&lt;</span>
-          <span>DyS.Dev</span>
+          <span>Mochamad Hardy.Dev</span>
           <span class="code-bracket">/&gt;</span>
           <span class="brand-dot"></span>
         </a>
@@ -69,8 +84,11 @@
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
 
-        <!-- Action / CTA Button -->
+        <!-- Action / CTA Button & Theme Toggle -->
         <div class="nav-actions">
+          <button class="theme-toggle-btn" id="themeToggle" aria-label="Ganti tema gelap/terang" title="Ganti ke tema terang">
+            <i class="fa-solid fa-sun"></i>
+          </button>
           <a href="#contact" class="btn btn-primary btn-sm">
             <i class="fa-solid fa-paper-plane"></i> Hire Me
           </a>
@@ -99,14 +117,19 @@
               Hi, I'm <span class="gradient-text">Mochamad Hardy</span>
             </h1>
 
+            <!-- Interactive Dynamic Typewriter Subtitle -->
             <div class="hero-subtitle">
-              <span>Fullstack Developer</span>
-              <span class="stack-tag">HTML &amp; CSS</span>
-              <span class="stack-tag">Bootstrap</span>
-              <span class="stack-tag">Git</span>
-              <span class="stack-tag">Laravel</span>
-              <span class="stack-tag">Flask</span>
-              <span class="stack-tag">Vue.js</span>
+              <span class="typewriter-prefix">I am a</span>
+              <span class="typewriter-text gradient-text" id="typewriterText">Fullstack Web Developer</span><span class="typewriter-cursor">|</span>
+            </div>
+
+            <div class="hero-tech-pills">
+              <span class="stack-tag"><i class="fa-brands fa-html5"></i> HTML5 &amp; CSS3</span>
+              <span class="stack-tag"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+              <span class="stack-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span class="stack-tag"><i class="fa-brands fa-laravel"></i> Laravel</span>
+              <span class="stack-tag"><i class="fa-brands fa-python"></i> Flask</span>
+              <span class="stack-tag"><i class="fa-brands fa-vuejs"></i> Vue.js</span>
             </div>
 
             <p class="hero-desc">
@@ -122,34 +145,26 @@
               </a>
             </div>
 
-            <!-- Quick Stats -->
+            <!-- Quick Stats with Animated Counter -->
             <div class="hero-stats">
               <div class="stat-item">
-                <span class="stat-number gradient-text">Fullstack</span>
-                <span class="stat-label">Web Solutions</span>
+                <span class="stat-number gradient-text" data-count="2" data-suffix="+">0</span>
+                <span class="stat-label">Tahun Pengalaman</span>
               </div>
               <div class="stat-item">
-                <span class="stat-number">API &amp; DB</span>
-                <span class="stat-label">Scalable Architecture</span>
+                <span class="stat-number" data-count="10" data-suffix="+">0</span>
+                <span class="stat-label">Teknologi Modern</span>
               </div>
               <div class="stat-item">
-                <span class="stat-number gradient-text">Clean Code</span>
-                <span class="stat-label">Best Practices</span>
+                <span class="stat-number gradient-text" data-count="100" data-suffix="%">0</span>
+                <span class="stat-label">Komitmen Kualitas</span>
               </div>
             </div>
           </div>
 
-          <!-- Hero Right: Avatar Frame with Floating Badges -->
+          <!-- Hero Right: Avatar Frame with 3D Tilt & Floating Badges -->
           <div class="hero-visual animate-on-scroll">
-            <!-- 
-              ==============================================================
-              BINGKAI FOTO PROFIL (AVATAR FRAME)
-              Untuk mengganti foto wajah:
-              - Anda bisa langsung menimpa file 'assets/images/dys.jpeg'
-              - Atau mengganti atribut src di bawah ini ke file foto baru Anda.
-              ============================================================== 
-            -->
-            <div class="avatar-frame-wrapper">
+            <div class="avatar-frame-wrapper tilt-card spotlight-card">
               <div class="avatar-frame-inner">
                 <img
                   src="assets/images/dys.jpeg"
@@ -160,36 +175,7 @@
                 <div class="avatar-overlay-gradient"></div>
               </div>
 
-              <!-- Floating Tech Badges -->
-              <div class="floating-badge badge-vue" title="Frontend: Vue.js 3">
-                <div class="badge-icon">
-                  <i class="fa-brands fa-vuejs"></i>
-                </div>
-                <div class="badge-info">
-                  <span class="badge-title">Vue.js</span>
-                  <span class="badge-sub">Reactive UI</span>
-                </div>
-              </div>
-
-              <div class="floating-badge badge-laravel" title="Backend: Laravel">
-                <div class="badge-icon">
-                  <i class="fa-brands fa-laravel"></i>
-                </div>
-                <div class="badge-info">
-                  <span class="badge-title">Laravel</span>
-                  <span class="badge-sub">RESTful API</span>
-                </div>
-              </div>
-
-              <div class="floating-badge badge-flask" title="Backend: Python Flask">
-                <div class="badge-icon">
-                  <i class="fa-brands fa-python"></i>
-                </div>
-                <div class="badge-info">
-                  <span class="badge-title">Flask</span>
-                  <span class="badge-sub">Microservices</span>
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -369,7 +355,7 @@
             <!-- 6. GitHub -->
             <div class="tech-card animate-on-scroll" data-skill-category="database tools">
               <div class="tech-card-header">
-                <div class="tech-icon-wrap" style="background: rgba(255, 255, 255, 0.1); color: #f8fafc;">
+                <div class="tech-icon-wrap tech-icon-github">
                   <i class="fa-brands fa-github"></i>
                 </div>
                 <span class="tech-level-badge tools">Dev Tools</span>
@@ -526,9 +512,16 @@
           <!-- Projects Grid Showcase -->
           <div class="projects-grid">
             <!-- PROJECT 1: Garuda Tactical (Client Project Live) -->
-            <article class="project-card animate-on-scroll" data-category="client flask fullstack">
-              <!-- Framed Mockup Window Header -->
-              <div class="mockup-frame">
+            <article class="project-card tilt-card spotlight-card animate-on-scroll" data-category="client flask fullstack">
+              <!-- Framed Mockup Window Header (Interactive Lightbox Trigger) -->
+              <div
+                class="mockup-frame"
+                data-lightbox-src="assets/images/garuda-tac.png"
+                data-lightbox-title="Garuda Tactical (GARTAC) - Production E-Commerce"
+                data-lightbox-category="Client Project Live"
+                data-lightbox-link="https://gartac.co.id"
+                title="Klik untuk melihat preview layar penuh"
+              >
                 <div class="mockup-header">
                   <div class="mockup-dots">
                     <span class="mockup-dot dot-red"></span>
@@ -553,6 +546,9 @@
                     <i class="fa-solid fa-shield-halved placeholder-icon"></i>
                     <span class="placeholder-title">Garuda Tactical (GARTAC)</span>
                     <span class="placeholder-hint">🖼️ assets/images/garuda-tac.png</span>
+                  </div>
+                  <div class="mockup-overlay-hint">
+                    <span><i class="fa-solid fa-up-right-and-down-left-from-center"></i> Perbesar Preview</span>
                   </div>
                 </div>
               </div>
@@ -592,9 +588,16 @@
             </article>
 
             <!-- PROJECT 2: Multi-Branch Inventory & POS System -->
-            <article class="project-card animate-on-scroll" data-category="fullstack laravel vue">
-              <!-- Framed Mockup Window Header -->
-              <div class="mockup-frame">
+            <article class="project-card tilt-card spotlight-card animate-on-scroll" data-category="fullstack laravel vue">
+              <!-- Framed Mockup Window Header (Interactive Lightbox Trigger) -->
+              <div
+                class="mockup-frame"
+                data-lightbox-src="assets/images/pos-inventory.png"
+                data-lightbox-title="Multi-Branch Inventory &amp; POS (Point of Sale)"
+                data-lightbox-category="Personal Project (OnGoing)"
+                data-lightbox-link="https://github.com/MochamadHardy/inventoryManagement"
+                title="Klik untuk melihat preview layar penuh"
+              >
                 <div class="mockup-header">
                   <div class="mockup-dots">
                     <span class="mockup-dot dot-red"></span>
@@ -619,6 +622,9 @@
                     <i class="fa-solid fa-boxes-stacked placeholder-icon"></i>
                     <span class="placeholder-title">Multi-Branch Inventory &amp; POS</span>
                     <span class="placeholder-hint">🖼️ assets/images/pos-inventory.png</span>
+                  </div>
+                  <div class="mockup-overlay-hint">
+                    <span><i class="fa-solid fa-up-right-and-down-left-from-center"></i> Perbesar Preview</span>
                   </div>
                 </div>
               </div>
@@ -650,7 +656,7 @@
                   <a href="#contact" class="project-link primary-link">
                     <i class="fa-solid fa-circle-info"></i> Detail Proyek
                   </a>
-                  <a href="https://github.com/DySkiaa/inventoryManagement" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <a href="https://github.com/MochamadHardy/inventoryManagement" target="_blank" rel="noopener noreferrer" class="project-link">
                     <i class="fa-brands fa-github"></i> Repository
                   </a>
                 </div>
@@ -882,7 +888,7 @@
 
                 <!-- GitHub Profile Card -->
                 <a
-                  href="https://github.com/DySkiaa/"
+                  href="https://github.com/MochamadHardy/"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="contact-method-card"
@@ -893,7 +899,7 @@
                     </div>
                     <div>
                       <div class="contact-method-title">Kunjungi GitHub:</div>
-                      <div class="contact-method-val">github.com/DySkiaa</div>
+                      <div class="contact-method-val">github.com/MochamadHardy</div>
                     </div>
                   </div>
                   <i class="fa-solid fa-arrow-up-right-from-square" style="color: var(--text-subtle);"></i>
@@ -929,13 +935,32 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="formMessage" class="form-label">Pesan / Detail Proyek</label>
+                  <label for="formMessage" class="form-label">
+                    <span>Pesan / Detail Proyek</span>
+                    <span class="char-counter" id="charCounter">0 / 500</span>
+                  </label>
                   <textarea
                     id="formMessage"
                     class="form-textarea"
+                    maxlength="500"
                     placeholder="Ceritakan proyek atau kebutuhan sistem Anda..."
                     required
                   ></textarea>
+                </div>
+
+                <!-- Live Interactive WhatsApp Message Preview -->
+                <div class="wa-preview-card">
+                  <div class="wa-preview-header">
+                    <div class="wa-preview-title">
+                      <i class="fa-brands fa-whatsapp"></i> Live Message Preview
+                    </div>
+                    <span class="wa-preview-badge">Tampilan di WhatsApp</span>
+                  </div>
+                  <div class="wa-bubble">
+                    <div class="wa-bubble-name">Mochamad Hardy (DyS.Dev)</div>
+                    <div class="wa-bubble-content" id="waBubbleContent"><span class="wa-placeholder-text">Ketik nama dan pesan Anda di atas untuk melihat preview pesan yang akan terkirim secara otomatis...</span></div>
+                    <div class="wa-bubble-time" id="waBubbleTime">15:35 <i class="fa-solid fa-check-double wa-check"></i></div>
+                  </div>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -960,7 +985,7 @@
       <div class="container footer-content">
         <div class="brand-logo" style="font-size: 1.1rem;">
           <span class="code-bracket">&lt;</span>
-          <span>DyS.Dev</span>
+          <span>Mochamad Hardy.Dev</span>
           <span class="code-bracket">/&gt;</span>
         </div>
 
@@ -969,7 +994,7 @@
         </p>
 
         <div class="footer-socials">
-          <a href="https://github.com/DySkiaa/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+          <a href="https://github.com/MochamadHardy/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
             <i class="fa-brands fa-github"></i>
           </a>
           <a href="https://www.linkedin.com/in/mochamad-hardy-a92943268/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
@@ -986,6 +1011,32 @@
     <button class="back-to-top" id="backToTopBtn" title="Kembali ke atas" aria-label="Back to top">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
+
+    <!-- =========================================================================
+         INTERACTIVE LIGHTBOX MODAL (Full Screenshot Preview)
+         ========================================================================= -->
+    <div id="projectLightbox" class="lightbox-modal" aria-hidden="true" role="dialog" aria-labelledby="lightboxTitle">
+      <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+      <div class="lightbox-dialog">
+        <div class="lightbox-header">
+          <div class="lightbox-info">
+            <span class="lightbox-badge" id="lightboxCategory">Client Project</span>
+            <h4 class="lightbox-title" id="lightboxTitle">Judul Proyek</h4>
+          </div>
+          <div class="lightbox-actions">
+            <a id="lightboxLiveBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Kunjungi Live
+            </a>
+            <button class="lightbox-close" id="lightboxCloseBtn" title="Tutup (Esc)" aria-label="Tutup modal">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+        <div class="lightbox-body">
+          <img id="lightboxImg" src="" alt="Project Screenshot Large Preview" class="lightbox-img" />
+        </div>
+      </div>
+    </div>
 
     <!-- Main JavaScript -->
     <script src="assets/main.js"></script>
