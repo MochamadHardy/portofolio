@@ -41,15 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 2. NAVBAR BLUR & SCROLL PROGRESS BAR
+  // 2. NAVBAR BLUR & SCROLL PROGRESS BAR (Throttled via requestAnimationFrame)
   // =========================================================================
   const navbar = document.getElementById('navbar');
   const scrollProgressBar = document.getElementById('scrollProgressBar');
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  let ticking = false;
 
   const handleNavAndProgress = () => {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
     // Navbar glass effect
     if (navbar) {
-      if (window.scrollY > 40) {
+      if (scrollY > 40) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
@@ -58,40 +62,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Top Reading Scroll Progress Bar
     if (scrollProgressBar) {
-      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      const scrolled = height > 0 ? (scrollY / height) * 100 : 0;
       scrollProgressBar.style.width = `${scrolled}%`;
     }
+
+    // Back to top button visibility
+    if (backToTopBtn) {
+      if (scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+
+    ticking = false;
   };
 
-  window.addEventListener('scroll', handleNavAndProgress, { passive: true });
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(handleNavAndProgress);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
   handleNavAndProgress();
 
   // =========================================================================
-  // 3. SCROLLSPY (ACTIVE NAV LINK HIGHLIGHT)
+  // 3. SCROLLSPY (Zero Layout-Thrashing via IntersectionObserver)
   // =========================================================================
   const sections = document.querySelectorAll('section[id]');
-  const handleScrollSpy = () => {
-    const scrollY = window.pageYOffset;
+  const navLinkMap = {};
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      navLinkMap[href.substring(1)] = link;
+    }
+  });
 
-    sections.forEach((current) => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
-      const sectionId = current.getAttribute('id');
-      const activeLink = document.querySelector(`.nav-link[href*="${sectionId}"]`);
+  if ('IntersectionObserver' in window) {
+    const spyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            Object.keys(navLinkMap).forEach((key) => {
+              if (key === id) {
+                navLinkMap[key].classList.add('active');
+              } else {
+                navLinkMap[key].classList.remove('active');
+              }
+            });
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -70% 0px' }
+    );
 
-      if (activeLink) {
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          activeLink.classList.add('active');
-        } else {
-          activeLink.classList.remove('active');
-        }
-      }
-    });
-  };
-
-  window.addEventListener('scroll', handleScrollSpy, { passive: true });
+    sections.forEach((s) => spyObserver.observe(s));
+  }
 
   // =========================================================================
   // 4. SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
@@ -558,22 +590,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 16. BACK TO TOP BUTTON
+  // 16. BACK TO TOP BUTTON CLICK
   // =========================================================================
-  const backToTopBtn = document.getElementById('backToTopBtn');
   if (backToTopBtn) {
-    window.addEventListener(
-      'scroll',
-      () => {
-        if (window.scrollY > 400) {
-          backToTopBtn.classList.add('visible');
-        } else {
-          backToTopBtn.classList.remove('visible');
-        }
-      },
-      { passive: true }
-    );
-
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({
         top: 0,

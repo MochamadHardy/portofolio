@@ -1,6 +1,6 @@
 # Portfolio Mochamad Hardy - Fullstack Developer
 
-Portfolio web personal modern, interaktif, dan berperforma tinggi dengan tema **Dark & Light Mode**, efek 3D tilt, live message preview, screenshot lightbox, dan responsif di seluruh perangkat (Desktop, Tablet, Mobile).
+Portfolio web personal modern, interaktif, dan berperforma tinggi dengan tema **Dark & Light Mode**, efek 3D tilt, live message preview, screenshot lightbox, dan teroptimasi penuh untuk skor tinggi di **Google PageSpeed Insights** (Desktop & Mobile).
 
 ---
 
@@ -23,8 +23,8 @@ Portfolio web personal modern, interaktif, dan berperforma tinggi dengan tema **
    - Filter kartu proyek (Semua, Proyek Klien, Flask, Laravel, Fullstack) dan filter kategori keahlian secara instan tanpa reload halaman.
 8. **Dark & Light Mode Switcher**:
    - Beralih tema gelap & terang dengan palet kontras tinggi yang nyaman di mata, tersimpan permanen di `localStorage`.
-9. **Google Tag Manager & Google Analytics**:
-   - Terintegrasi dengan Google Tag Manager (`GTM-TJZDMDJW`) dan Google Analytics 4 (`G-3TE4WCCKDZ`) lengkap dengan fallback `<noscript>` untuk pelacakan trafik pengunjung.
+9. **Google Tag Manager & Google Analytics (High Performance)**:
+   - Terintegrasi dengan Google Tag Manager (`GTM-TJZDMDJW`) dan Google Analytics 4 (`G-3TE4WCCKDZ`) dengan arsitektur non-blocking idle loading sehingga tidak menghambat render awal di perangkat mobile.
 10. **Aksi Cepat & Micro-interactions**:
    - Efek gelombang air (*ripple effect*) pada setiap tombol saat diklik.
    - Tombol salin email satu klik (*Copy to Clipboard*) dengan animasi tanda centang hijau "Tersalin!".
@@ -32,51 +32,30 @@ Portfolio web personal modern, interaktif, dan berperforma tinggi dengan tema **
 
 ---
 
-## 📁 Struktur Direktori & Aset
+## ⚡ Optimasi Performa Mobile (Google PageSpeed Insights)
 
-```text
-portofolio/
-├── index.html           # Struktur halaman utama (Semantik HTML5)
-├── README.md            # Dokumentasi proyek
-└── assets/
-    ├── style.css        # Desain, CSS variables, Dark/Light mode, efek interaktif
-    ├── main.js          # Engine interaktivitas (ScrollSpy, Lightbox, WA preview, Tilt)
-    └── images/          # Aset foto & screenshot proyek
-        ├── dys.jpeg             # Foto profil avatar
-        ├── garuda-tac.png       # Screenshot E-Commerce Garuda Tactical
-        └── pos-inventory.png    # Screenshot Multi-Branch Inventory POS
-```
+- **Kompresi Gambar Modern (WebP)**: Mengurangi beban payload gambar dari ~2.4 MB menjadi hanya ~146 KB (penghematan > 90%).
+- **Non-blocking Fonts & CSS**: Google Fonts dan Font Awesome dimuat asinkron (`media="print" onload="this.media='all'"`) dengan `display=swap`.
+- **Zero Layout-Thrashing**: Scroll listener dioptimalkan menggunakan `requestAnimationFrame` dan ScrollSpy ditenagai `IntersectionObserver`.
+- **Aset Ter-minifikasi**: Menggunakan `style.min.css` dan `main.min.js` untuk kecepatan transfer data.
 
 ---
 
-## 🛠️ Menjalankan Proyek Secara Lokal
-
-Cukup buka file `index.html` langsung di browser, atau jalankan server lokal:
-
-```bash
-# Menggunakan Python
-python -m http.server 8000
-
-# Menggunakan Node.js npx serve
-npx serve .
-```
-
-Buka `http://localhost:8000` pada browser Anda.
-
-
 ## 📁 Struktur Direktori & Aset
 
 ```text
 portofolio/
-├── index.html           # Struktur halaman utama (Semantik HTML5)
-├── README.md            # Dokumentasi proyek
+├── index.html               # Struktur halaman utama (Semantik HTML5)
+├── README.md                # Dokumentasi proyek
 └── assets/
-    ├── style.css        # Desain, CSS variables, Dark/Light mode, efek interaktif
-    ├── main.js          # Engine interaktivitas (ScrollSpy, Lightbox, WA preview, Tilt)
-    └── images/          # Aset foto & screenshot proyek
-        ├── dys.jpeg             # Foto profil avatar
-        ├── garuda-tac.png       # Screenshot E-Commerce Garuda Tactical
-        └── pos-inventory.png    # Screenshot Multi-Branch Inventory POS
+    ├── style.css            # Stylesheet utama (unminified)
+    ├── style.min.css        # Stylesheet terkompresi produksi
+    ├── main.js              # Script utama (unminified)
+    ├── main.min.js          # Script terkompresi produksi
+    └── images/              # Aset foto & screenshot (WebP + fallback PNG/JPEG)
+        ├── dys.webp / dys.jpeg
+        ├── garuda-tac.webp / garuda-tac.png
+        └── pos-inventory.webp / pos-inventory.png
 ```
 
 ---

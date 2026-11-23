@@ -14,30 +14,59 @@
     <meta name="author" content="Mochamad Hardy" />
     <meta name="keywords" content="Mochamad Hardy, Fullstack Developer, Web Developer, Laravel, Flask, Vue.js, Python, PHP, PostgreSQL, MySQL, REST API, Indonesia" />
 
-    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <!-- Preconnect to CDN origins for faster DNS & TLS negotiation -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
 
-    <!-- Font Awesome 6 Icons -->
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono (Non-blocking with swap) -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      />
+    </noscript>
+
+    <!-- Font Awesome 6 Icons (Non-blocking with preload) -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      />
+    </noscript>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/style.css" />
+    <!-- Minified Custom CSS -->
+    <link rel="stylesheet" href="assets/style.min.css" />
 
-    <!-- Google Tag Manager (gtm.js) -->
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TJZDMDJW"></script>
-    <!-- Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TE4WCCKDZ"></script>
+    <!-- Google Tag Manager & Google Analytics (High-Performance Non-Blocking Loader) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -45,6 +74,35 @@
       }
       gtag("js", new Date());
       gtag("config", "G-3TE4WCCKDZ");
+
+      (function () {
+        var analyticsFired = false;
+        function loadAnalytics() {
+          if (analyticsFired) return;
+          analyticsFired = true;
+
+          var gtm = document.createElement("script");
+          gtm.async = true;
+          gtm.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TJZDMDJW";
+          document.head.appendChild(gtm);
+
+          var ga = document.createElement("script");
+          ga.async = true;
+          ga.src = "https://www.googletagmanager.com/gtag/js?id=G-3TE4WCCKDZ";
+          document.head.appendChild(ga);
+        }
+
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(loadAnalytics, { timeout: 2500 });
+        } else {
+          window.addEventListener("load", function () {
+            setTimeout(loadAnalytics, 1500);
+          });
+        }
+        ["scroll", "mousemove", "touchstart"].forEach(function (evt) {
+          window.addEventListener(evt, loadAnalytics, { once: true, passive: true });
+        });
+      })();
     </script>
   </head>
   <body>
@@ -166,12 +224,19 @@
           <div class="hero-visual animate-on-scroll">
             <div class="avatar-frame-wrapper tilt-card spotlight-card">
               <div class="avatar-frame-inner">
-                <img
-                  src="assets/images/dys.jpeg"
-                  alt="Mochamad Hardy - Fullstack Developer"
-                  class="profile-avatar-img"
-                  onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Mochamad+Hardy&background=0ea5e9&color=fff&size=400';"
-                />
+                <picture>
+                  <source srcset="assets/images/dys.webp" type="image/webp" />
+                  <img
+                    src="assets/images/dys.jpeg"
+                    alt="Mochamad Hardy - Fullstack Developer"
+                    class="profile-avatar-img"
+                    width="320"
+                    height="360"
+                    fetchpriority="high"
+                    decoding="async"
+                    onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Mochamad+Hardy&background=0ea5e9&color=fff&size=400';"
+                  />
+                </picture>
                 <div class="avatar-overlay-gradient"></div>
               </div>
 
@@ -211,12 +276,12 @@
               <div class="about-highlights">
                 <div class="highlight-box">
                   <i class="fa-solid fa-cubes"></i>
-                  <h4>Fullstack Mindset</h4>
+                  <h3>Fullstack Mindset</h3>
                   <p>Memahami alur data dari database, controller, API, hingga ke visual interface.</p>
                 </div>
                 <div class="highlight-box">
                   <i class="fa-solid fa-shield-halved"></i>
-                  <h4>Security &amp; Clean Code</h4>
+                  <h3>Security &amp; Clean Code</h3>
                   <p>Menerapkan validasi data, proteksi endpoint, dan prinsip DRY &amp; SOLID.</p>
                 </div>
               </div>
@@ -300,7 +365,7 @@
                 </div>
                 <span class="tech-level-badge base">Fondasi / Base</span>
               </div>
-              <h4 class="tech-name">HTML5</h4>
+              <h3 class="tech-name">HTML5</h3>
               <p class="tech-desc">Struktur semantik dokumen web, aksesibilitas (a11y), forms &amp; standar SEO.</p>
             </div>
 
@@ -312,7 +377,7 @@
                 </div>
                 <span class="tech-level-badge base">Fondasi / Base</span>
               </div>
-              <h4 class="tech-name">CSS3</h4>
+              <h3 class="tech-name">CSS3</h3>
               <p class="tech-desc">Flexbox, CSS Grid, media queries responsif, animasi transisi &amp; styling modern.</p>
             </div>
 
@@ -324,7 +389,7 @@
                 </div>
                 <span class="tech-level-badge base">Fondasi / Base</span>
               </div>
-              <h4 class="tech-name">Bootstrap</h4>
+              <h3 class="tech-name">Bootstrap</h3>
               <p class="tech-desc">Grid system responsif, komponen antarmuka siap pakai &amp; prototipe UI cepat.</p>
             </div>
 
@@ -336,7 +401,7 @@
                 </div>
                 <span class="tech-level-badge base">Fondasi / Base</span>
               </div>
-              <h4 class="tech-name">JavaScript (ES6+)</h4>
+              <h3 class="tech-name">JavaScript (ES6+)</h3>
               <p class="tech-desc">DOM manipulation, asynchronous AJAX/Fetch, modular ES6, array methods &amp; logika client.</p>
             </div>
 
@@ -348,7 +413,7 @@
                 </div>
                 <span class="tech-level-badge base">Fondasi / Base</span>
               </div>
-              <h4 class="tech-name">Git</h4>
+              <h3 class="tech-name">Git</h3>
               <p class="tech-desc">Version control system, commit disiplin, branching strategy, merging &amp; conflict resolution.</p>
             </div>
 
@@ -360,7 +425,7 @@
                 </div>
                 <span class="tech-level-badge tools">Dev Tools</span>
               </div>
-              <h4 class="tech-name">GitHub</h4>
+              <h3 class="tech-name">GitHub</h3>
               <p class="tech-desc">Manajemen repositori jarak jauh, pull request, kolaborasi tim &amp; dokumentasi proyek.</p>
             </div>
 
@@ -372,7 +437,7 @@
                 </div>
                 <span class="tech-level-badge base">Fondasi / Base</span>
               </div>
-              <h4 class="tech-name">PHP</h4>
+              <h3 class="tech-name">PHP</h3>
               <p class="tech-desc">Pemrograman backend server-side, Object-Oriented Programming (OOP) &amp; arsitektur MVC.</p>
             </div>
 
@@ -384,7 +449,7 @@
                 </div>
                 <span class="tech-level-badge framework">Framework Utama</span>
               </div>
-              <h4 class="tech-name">Laravel</h4>
+              <h3 class="tech-name">Laravel</h3>
               <p class="tech-desc">RESTful API modular, Eloquent ORM, migrasi database, middleware &amp; autentikasi Sanctum.</p>
             </div>
 
@@ -396,7 +461,7 @@
                 </div>
                 <span class="tech-level-badge base">Fondasi / Base</span>
               </div>
-              <h4 class="tech-name">Python</h4>
+              <h3 class="tech-name">Python</h3>
               <p class="tech-desc">Sintaks terstruktur, automasi skrip, pemrosesan data relasional &amp; backend business logic.</p>
             </div>
 
@@ -408,7 +473,7 @@
                 </div>
                 <span class="tech-level-badge framework">Framework Utama</span>
               </div>
-              <h4 class="tech-name">Flask</h4>
+              <h3 class="tech-name">Flask</h3>
               <p class="tech-desc">Microframework Python ringan, cepat, dan modular untuk microservices &amp; RESTful API.</p>
             </div>
 
@@ -420,7 +485,7 @@
                 </div>
                 <span class="tech-level-badge framework">Framework Utama</span>
               </div>
-              <h4 class="tech-name">Vue.js (v2 &amp; v3)</h4>
+              <h3 class="tech-name">Vue.js (v2 &amp; v3)</h3>
               <p class="tech-desc">Single Page Application (SPA), reaktivitas komponen, state management &amp; client-side routing.</p>
             </div>
 
@@ -432,7 +497,7 @@
                 </div>
                 <span class="tech-level-badge framework">Styling Modern</span>
               </div>
-              <h4 class="tech-name">Tailwind CSS</h4>
+              <h3 class="tech-name">Tailwind CSS</h3>
               <p class="tech-desc">Utility-first CSS framework untuk perancangan antarmuka kustom yang cepat dan efisien.</p>
             </div>
 
@@ -444,7 +509,7 @@
                 </div>
                 <span class="tech-level-badge database">Database RDBMS</span>
               </div>
-              <h4 class="tech-name">MySQL</h4>
+              <h3 class="tech-name">MySQL</h3>
               <p class="tech-desc">Perancangan skema relasional, normalisasi tabel, query indexing &amp; integritas data transaksi.</p>
             </div>
 
@@ -456,7 +521,7 @@
                 </div>
                 <span class="tech-level-badge database">Database RDBMS</span>
               </div>
-              <h4 class="tech-name">PostgreSQL</h4>
+              <h3 class="tech-name">PostgreSQL</h3>
               <p class="tech-desc">Sistem basis data objek-relasional tingkat lanjut dengan performa tinggi &amp; fitur SQL kompleks.</p>
             </div>
 
@@ -468,7 +533,7 @@
                 </div>
                 <span class="tech-level-badge framework">Arsitektur Web</span>
               </div>
-              <h4 class="tech-name">RESTful APIs</h4>
+              <h3 class="tech-name">RESTful APIs</h3>
               <p class="tech-desc">Standar HTTP endpoints JSON terstruktur, status code konsisten, token auth &amp; arsitektur stateless.</p>
             </div>
 
@@ -480,7 +545,7 @@
                 </div>
                 <span class="tech-level-badge tools">Dev Tools</span>
               </div>
-              <h4 class="tech-name">Postman</h4>
+              <h3 class="tech-name">Postman</h3>
               <p class="tech-desc">Pengujian endpoint RESTful API, verifikasi response payload &amp; dokumentasi request testing.</p>
             </div>
           </div>
@@ -537,11 +602,18 @@
                   Menggunakan screenshot asli dari assets/images/garuda-tac.png
                 -->
                 <div class="mockup-body">
-                  <img
-                    src="assets/images/garuda-tac.png"
-                    alt="Garuda Tactical (GARTAC) E-Commerce Platform"
-                    class="mockup-img"
-                  />
+                  <picture>
+                    <source srcset="assets/images/garuda-tac.webp" type="image/webp" />
+                    <img
+                      src="assets/images/garuda-tac.png"
+                      alt="Garuda Tactical (GARTAC) E-Commerce Platform"
+                      class="mockup-img"
+                      width="600"
+                      height="340"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   <div class="mockup-placeholder">
                     <i class="fa-solid fa-shield-halved placeholder-icon"></i>
                     <span class="placeholder-title">Garuda Tactical (GARTAC)</span>
@@ -613,11 +685,18 @@
                   Menggunakan screenshot asli dari assets/images/pos-inventory.png
                 -->
                 <div class="mockup-body">
-                  <img
-                    src="assets/images/pos-inventory.png"
-                    alt="Multi-Branch Inventory & POS System Preview"
-                    class="mockup-img"
-                  />
+                  <picture>
+                    <source srcset="assets/images/pos-inventory.webp" type="image/webp" />
+                    <img
+                      src="assets/images/pos-inventory.png"
+                      alt="Multi-Branch Inventory & POS System Preview"
+                      class="mockup-img"
+                      width="600"
+                      height="340"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   <div class="mockup-placeholder">
                     <i class="fa-solid fa-boxes-stacked placeholder-icon"></i>
                     <span class="placeholder-title">Multi-Branch Inventory &amp; POS</span>
@@ -1021,7 +1100,7 @@
         <div class="lightbox-header">
           <div class="lightbox-info">
             <span class="lightbox-badge" id="lightboxCategory">Client Project</span>
-            <h4 class="lightbox-title" id="lightboxTitle">Judul Proyek</h4>
+            <h3 class="lightbox-title" id="lightboxTitle">Judul Proyek</h3>
           </div>
           <div class="lightbox-actions">
             <a id="lightboxLiveBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
@@ -1033,12 +1112,12 @@
           </div>
         </div>
         <div class="lightbox-body">
-          <img id="lightboxImg" src="" alt="Project Screenshot Large Preview" class="lightbox-img" />
+          <img id="lightboxImg" src="" alt="Project Screenshot Large Preview" class="lightbox-img" width="1000" height="600" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
 
     <!-- Main JavaScript -->
-    <script src="assets/main.js"></script>
+    <script src="assets/main.min.js"></script>
   </body>
 </html>
