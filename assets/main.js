@@ -564,15 +564,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   const mockupImages = document.querySelectorAll('.mockup-img');
   mockupImages.forEach((img) => {
-    const parent = img.parentElement;
-    const placeholder = parent ? parent.querySelector('.mockup-placeholder') : null;
+    const mockupBody = img.closest('.mockup-body');
+    const placeholder = mockupBody ? mockupBody.querySelector('.mockup-placeholder') : null;
+    const picture = img.closest('picture');
 
     const showImage = () => {
+      if (picture) picture.style.display = 'block';
       img.style.display = 'block';
       if (placeholder) placeholder.style.display = 'none';
     };
 
     const showPlaceholder = () => {
+      if (picture) picture.style.display = 'none';
       img.style.display = 'none';
       if (placeholder) placeholder.style.display = 'flex';
     };
